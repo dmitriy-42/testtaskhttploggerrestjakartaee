@@ -2,11 +2,13 @@ package org.example.testtaskhttploggerrest.models;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
+import jakarta.xml.bind.annotation.XmlType;
 import lombok.*;
 
 @Data
 @Entity
 @ToString
+@XmlType
 @Table(name = "additional_settings")
 @Builder
 @AllArgsConstructor

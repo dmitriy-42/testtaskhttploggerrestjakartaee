@@ -19,6 +19,7 @@ import java.util.Map;
 @Data
 @Entity
 @ToString
+@XmlType
 @Table(name = "logger_messages", indexes = {@Index(columnList = "logger_name"), @Index(columnList = "create_time"), @Index(columnList = "level")})
 @NoArgsConstructor
 public class LogMessage implements Serializable {
