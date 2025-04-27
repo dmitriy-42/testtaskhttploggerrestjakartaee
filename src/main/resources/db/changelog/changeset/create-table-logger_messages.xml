@@ -1,0 +1,52 @@
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="create-table-logger_messages" author="Dmitriy">
+        <createTable tableName="logger_messages">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+
+            <column name="logger_name" type="varchar(50)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="level" type="varchar(10)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="message" type="varchar(200)">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="url" type="varchar(100)">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="stack_trace" type="varchar(500)">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="params" type="clob">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="add_info" type="clob">
+                <constraints nullable="true"/>
+            </column>
+
+            <column name="create_time" type="timestamp" defaultValueDate="current_timestamp">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createIndex indexName="index_logger_messages" tableName="logger_messages">
+            <column name="logger_name"/>
+            <column name="level"/>
+            <column name="create_time"/>
+        </createIndex>
+    </changeSet>
+
+</databaseChangeLog>

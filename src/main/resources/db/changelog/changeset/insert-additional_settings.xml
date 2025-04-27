@@ -1,0 +1,24 @@
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="insert-additional_settings" author="Dmitriy">
+
+        <insert tableName="additional_settings">
+            <column name="logger_name" value="security" />
+            <column name="level" value="INFO" />
+        </insert>
+
+        <insert tableName="additional_settings">
+            <column name="logger_name" value="security.login" />
+            <column name="level" value="DEBUG" />
+        </insert>
+
+        <insert tableName="additional_settings">
+            <column name="logger_name" value="security.login.loginPage" />
+            <column name="level" value="INFO" />
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
